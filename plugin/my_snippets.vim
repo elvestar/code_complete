@@ -158,6 +158,31 @@ let g:template['blade']['bcb'] = "cc_binary".b:build_file_body
 let g:template['blade']['bcl'] = "cc_library".b:build_file_body
 let g:template['blade']['bct'] = "cc_test".b:build_file_body
 
+" reStructuredText
+let g:template['rst'] = {}
+let g:template['rst']['h1'] = "".repeat("=",80).""
+
+let g:template['rst']['note'] = ".. note:: ".g:rs."...".g:re
+let g:template['rst']['danger'] = ".. danger:: ".g:rs."...".g:re
+let g:template['rst']['tip'] = ".. tip:: ".g:rs."...".g:re
+let g:template['rst']['important'] = ".. important:: ".g:rs."...".g:re
+let g:template['rst']['warning'] = ".. warning:: ".g:rs."...".g:re
+
+let g:template['rst']['code'] = ".. code-block:: ".g:rs."language".g:re."\n".g:rs."...".g:re
+let g:template['rst']['img'] = ".. image:: ".g:rs."path".g:re
+let g:template['rst']['link'] = "`".g:rs."name".g:re." <".g:rs."url".g:re.">`_"
+
+let g:template['rst']['e'] = "*".g:rs."...".g:re."*"
+let g:template['rst']['se'] = "**".g:rs."...".g:re."**"
+let g:template['rst']['lit'] = "``".g:rs."...".g:re."``"
+
+let g:template['rst']['table'] = "+--+--+"."\n"."| ".g:rs."...".g:re." |  |"."\n"."+--+--+"."\n"."|  |  |"."\n"."+--+--+"
+let g:template['rst']['list'] = "* "
+
+function! CreateRivTitle1()
+    call RivTitle1()
+endfunction
+
 function! GET_UP_PATH(dirname)
     let dest_path = ""
     let dir = a:dirname
